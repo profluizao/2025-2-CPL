@@ -1,4 +1,3 @@
-import Testes.TesteToken;
 import Testes.TesteTokenComDefs;
 
 public class App {
