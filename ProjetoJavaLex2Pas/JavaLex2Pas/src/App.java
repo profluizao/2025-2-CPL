@@ -1,8 +1,9 @@
-import Testes.TesteTokenComDefs;
+import Testes.TesteBufferPrimario;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        TesteTokenComDefs teste = new TesteTokenComDefs();
-        teste.Executar();
+        TesteBufferPrimario teste = new TesteBufferPrimario();
+        teste.executar();
+        //teste.executar("src\\Arquivos\\testdiv.pas");
     }
 }
