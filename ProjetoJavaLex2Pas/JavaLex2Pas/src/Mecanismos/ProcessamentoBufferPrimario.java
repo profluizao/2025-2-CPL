@@ -5,8 +5,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ProcessamentoBuffers extends AbsBuffers{
-
+public class ProcessamentoBufferPrimario extends AbsBuffers implements IBuffers{
     @Override
     public void carregarArquivoParaLeitor() {
         System.out.println("--------------------------------------");

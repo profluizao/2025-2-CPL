@@ -2,25 +2,39 @@ package Mecanismos;
 
 import java.io.BufferedReader;
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import Dominio.Token;
 
 public abstract class AbsBuffers {
     protected String caminhoDoArquivo;
+
     protected BufferedReader leitor;
+    
     protected ArrayList<String> bufferPrimario;
-    protected HashMap<Integer, Token> bufferSecundario;
 
-    public abstract void carregarArquivoParaLeitor();
+    protected ArrayList<String> bufferSecundario;
 
-    public abstract void carregarArquivoParaLeitor(String caminho);
+    public ArrayList<String> getBufferPrimario() {
+        return bufferPrimario;
+    }
 
-    public abstract void importarDadosParaBufferPrimario();
+    public void setBufferPrimario(ArrayList<String> bufferPrimario) {
+        this.bufferPrimario = bufferPrimario;
+    }
 
-    public abstract void processarDadosDoBufferPrimario();
+    public ArrayList<String> getBufferSecundario() {
+        return bufferSecundario;
+    }
 
-    public abstract void imprimirDadosDoBufferPrimario();
+    public void setBufferSecundario(ArrayList<String> bufferSecundario) {
+        this.bufferSecundario = bufferSecundario;
+    }
+
+    protected final String captureComment = "\\/\\/.*|\\(\\*(?:.|\\s)*\\*\\)";
+    protected final String captureNumbers = "(?<!\\w)(?:-?\\d+(?:\\.\\d+)?)(?!\\w)";
+    protected final String captureLiteral = "'(?:[^']|'')*'";
+    protected final String captureWords   = "\\w+";
+    protected final String captureCharacters = "(?::=|>=|<=|<>|>|<|=|\\+|\\-|\\*|\\/|[:;,.()\\[\\]{}])";
+    protected final String captureIdentifier = "^[A-Za-z][A-Za-z0-9_]*$";
+    protected String capture;
 
     public AbsBuffers(){}
 }

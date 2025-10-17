@@ -1,12 +1,12 @@
 package Testes;
 
-import Mecanismos.ProcessamentoBuffers;
+import Mecanismos.ProcessamentoBufferPrimario;
 
 public class TesteBufferPrimario {
-    private ProcessamentoBuffers procBuffer;
+    private ProcessamentoBufferPrimario procBuffer;
 
     public TesteBufferPrimario(){
-        this.procBuffer = new ProcessamentoBuffers();
+        this.procBuffer = new ProcessamentoBufferPrimario();
     }
 
     public void executar(){
